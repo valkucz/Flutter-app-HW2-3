@@ -1,0 +1,1 @@
+enum RateState { good, bad }
