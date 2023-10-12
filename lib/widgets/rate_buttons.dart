@@ -1,9 +1,9 @@
-import 'package:app/common/rate_state.dart';
-import 'package:app/common/rate_state_style.dart';
+import 'package:app/common/rate_enum.dart';
+import 'package:app/common/rate_style.dart';
 import 'package:flutter/material.dart';
 
 class RateButtons extends StatefulWidget {
-  final Map<RateState, Map<String, Function>> rateCallbacks;
+  final Map<Rate, Map<String, Function>> rateCallbacks;
 
   const RateButtons({super.key, required this.rateCallbacks});
 
@@ -12,17 +12,16 @@ class RateButtons extends StatefulWidget {
 }
 
 class _RateButtonsState extends State<RateButtons> {
-  RateState? _state;
+  Rate? _state;
 
   @override
   Widget build(BuildContext context) {
     return Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children:
-            RateState.values.map((state) => _buildRateButton(state)).toList());
+        children: Rate.values.map((state) => _buildRateButton(state)).toList());
   }
 
-  Widget _buildRateButton(RateState state) {
+  Widget _buildRateButton(Rate state) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: OutlinedButton(
@@ -30,8 +29,8 @@ class _RateButtonsState extends State<RateButtons> {
             ? ButtonStyle(
                 foregroundColor:
                     const MaterialStatePropertyAll<Color>(Colors.white),
-                backgroundColor: MaterialStatePropertyAll<Color>(
-                    RateStateStyle.colors[state]!))
+                backgroundColor:
+                    MaterialStatePropertyAll<Color>(RateStyle.colors[state]!))
             : null,
         onPressed: () => {
           setState(() => {

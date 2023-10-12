@@ -1,11 +1,11 @@
-import 'package:app/common/rate_state_style.dart';
+import 'package:app/common/rate_style.dart';
 import 'package:flutter/material.dart';
-import 'package:app/common/rate_state.dart';
+import 'package:app/common/rate_enum.dart';
 
 const _fontSize = 16.0;
 
 class Counter {
-  final RateState label;
+  final Rate label;
   int _count = 0;
   Counter({required this.label});
 
@@ -14,7 +14,7 @@ class Counter {
 
   Widget display() => Text('${label.name.toUpperCase()}: $_count',
       style: TextStyle(
-          color: RateStateStyle.colors[label],
+          color: RateStyle.colors[label],
           fontSize: _fontSize,
           fontWeight: FontWeight.bold));
 }

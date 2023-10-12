@@ -1,0 +1,1 @@
+enum Rate { good, bad }
