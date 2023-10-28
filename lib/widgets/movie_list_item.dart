@@ -1,31 +1,36 @@
+import 'package:app/widgets/rate_buttons.dart';
 import 'package:flutter/material.dart';
 
-const _movieListItemHeight = 50.0;
-const _horizontalGap = 12.0;
-const _verticalMargin = 6.0;
-const _fontSize = 17.0;
+const _FONT_SIZE = 17.0;
+const _HORIZONTAL_GAP = 12.0;
+const _MOVIE_LIST_ITEM_HEIGHT = 50.0;
+const _VERTICAL_MARGIN = 6.0;
 
 class MovieListItem extends StatelessWidget {
   final String name;
-  final Widget rateButtons;
+  final RateButtons rateButtons;
+
   const MovieListItem(
       {super.key, required this.name, required this.rateButtons});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: _movieListItemHeight,
-        margin: const EdgeInsets.symmetric(vertical: _verticalMargin),
-        padding: const EdgeInsets.symmetric(horizontal: _horizontalGap),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(name,
-                style: const TextStyle(
-                  fontSize: _fontSize,
-                )),
-            rateButtons,
-          ],
-        ));
+      height: _MOVIE_LIST_ITEM_HEIGHT,
+      margin: const EdgeInsets.symmetric(vertical: _VERTICAL_MARGIN),
+      padding: const EdgeInsets.symmetric(horizontal: _HORIZONTAL_GAP),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            name,
+            style: const TextStyle(
+              fontSize: _FONT_SIZE,
+            ),
+          ),
+          rateButtons
+        ],
+      ),
+    );
   }
 }

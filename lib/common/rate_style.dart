@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 class RateStyle {
   static final Map<Rate, Color> colors = {
-    Rate.good: const Color.fromARGB(255, 94, 166, 94),
-    Rate.bad: const Color.fromARGB(255, 152, 64, 64),
+    Rate.good: Colors.green,
+    Rate.bad: Colors.red
   };
   const RateStyle();
 }

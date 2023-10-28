@@ -7,10 +7,9 @@ class AppRoot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Movies',
-        theme: ThemeData(
-          colorSchemeSeed: const Color.fromARGB(255, 168, 161, 229),
-        ),
-        home: const HomePage());
+      title: 'Movies',
+      theme: ThemeData(),
+      home: const HomePage(),
+    );
   }
 }
