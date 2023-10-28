@@ -1,4 +1,5 @@
 import 'package:app/widgets/rate_buttons.dart';
+import 'package:app/widgets/update_movie_section.dart';
 import 'package:flutter/material.dart';
 
 const _FONT_SIZE = 17.0;
@@ -8,10 +9,14 @@ const _VERTICAL_MARGIN = 6.0;
 
 class MovieListItem extends StatelessWidget {
   final String name;
+  final int index;
   final RateButtons rateButtons;
 
   const MovieListItem(
-      {super.key, required this.name, required this.rateButtons});
+      {super.key,
+      required this.name,
+      required this.index,
+      required this.rateButtons});
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +27,15 @@ class MovieListItem extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            name,
-            style: const TextStyle(
-              fontSize: _FONT_SIZE,
+          TextButton(
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => UpdateMovieSection(movieIndex: index),
+              ),
+            ),
+            child: Text(
+              name,
+              style: const TextStyle(fontSize: _FONT_SIZE, color: Colors.black),
             ),
           ),
           rateButtons
