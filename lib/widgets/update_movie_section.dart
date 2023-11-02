@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class UpdateMovieSection extends StatelessWidget {
-  // TOOD: change TextEdit name to movie name.
   final int movieIndex;
   const UpdateMovieSection({super.key, required this.movieIndex});
 
@@ -12,6 +11,7 @@ class UpdateMovieSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final notifier = context.watch<MovieNotifier>();
     return TextEdit(
+      title: 'Edit movie name',
       onTextChanged: (value) => notifier.setMovie(
           movieIndex, value, notifier.movies[movieIndex].rate),
     );

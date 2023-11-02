@@ -17,9 +17,8 @@ class Counter extends StatelessWidget {
     return TextButton(
       onPressed: () => notifier.setFilter(rate),
       style: TextButton.styleFrom(
-          backgroundColor: notifier.currentRate == rate
-              ? RateStyle.colors[rate]
-              : Colors.white),
+          backgroundColor:
+              notifier.currentRate == rate ? RateStyle.colors[rate] : null),
       child: Text(
         '${rate.name.toUpperCase()}: $count',
         style: TextStyle(

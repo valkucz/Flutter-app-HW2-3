@@ -11,6 +11,7 @@ class AddMovieSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final notifier = context.watch<MovieNotifier>();
     return TextEdit(
+      title: 'Add movie',
       onTextChanged: (value) => notifier.addMovie(
         Movie(name: value, rate: null),
       ),

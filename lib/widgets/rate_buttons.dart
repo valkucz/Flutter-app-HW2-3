@@ -18,10 +18,10 @@ class RateButtons extends StatelessWidget {
   Widget _buildRateButton(Rate rate) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: OutlinedButton(
-        style: OutlinedButton.styleFrom(
+      child: TextButton(
+        style: TextButton.styleFrom(
           backgroundColor: currentRate == rate ? RateStyle.colors[rate] : null,
-          foregroundColor: currentRate == rate ? Colors.white : null,
+          foregroundColor: currentRate == rate ? Colors.white : Colors.black,
         ),
         onPressed: () => onRateChanged(rate == currentRate ? null : rate),
         child: Text(rate.name.toUpperCase()),

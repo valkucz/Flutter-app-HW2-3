@@ -6,8 +6,9 @@ import 'package:provider/provider.dart';
 const _TEXT_INPUT_LIMIT = 15;
 
 class TextEdit extends StatefulWidget {
+  final String title;
   final Function(String) onTextChanged;
-  const TextEdit({super.key, required this.onTextChanged});
+  const TextEdit({super.key, required this.title, required this.onTextChanged});
 
   @override
   TextEditState createState() => TextEditState();
@@ -19,7 +20,7 @@ class TextEditState extends State<TextEdit> {
     final notifier = context.watch<MovieNotifier>();
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Add Movie'),
+        title: Text(widget.title),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
